@@ -5,7 +5,7 @@ import sqlite3
 app = Flask(__name__)
 CORS(app)
 
-DATABASE = 'database/users.db'
+DATABASE = 'user_database/users.db'
 
 def get_db():
     db = getattr(g, '_database', None)
@@ -42,10 +42,10 @@ def login():
     user = query_db('SELECT * FROM users WHERE nric = ?', [nric], one=True)
     
     if user:
-        db_nric, name, age, postal, cpf_oa = user
+        db_nric, name, age, postal, phone, cpf_oa = user
         print(f"Found user: {name}, NRIC: {db_nric}")
         print(user)
-        return jsonify({'nric': nric, 'name': name, 'age': age, 'postal': postal, 'cpf_oa': cpf_oa}), 200
+        return jsonify({'nric': nric, 'name': name, 'age': age, 'postal': postal,'phone':phone, 'cpf_oa': cpf_oa}), 200
     else:
         print("User not found")
         
@@ -60,6 +60,7 @@ if __name__ == '__main__':
                 name TEXT NOT NULL,
                 age INTEGER NOT NULL,
                 postal TEXT NOT NULL,
+                phone INTEGER NOT NULL,
                 cpf_oa REAL NOT NULL,
                 password TEXT NOT NULL
             )
