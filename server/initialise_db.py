@@ -28,7 +28,6 @@ CREATE TABLE IF NOT EXISTS users (
 cursor.execute(create_table_query)
 conn.commit()
 
-# Insert data from DataFrame to SQLite table
 for _, row in df.iterrows():
     insert_query = """
     INSERT INTO users (nric, name, age, postal, cpf_oa)
@@ -37,7 +36,5 @@ for _, row in df.iterrows():
     cursor.execute(insert_query, (row['nric'], row['name'], row['age'], row['postal'], row['cpf_oa']))
     conn.commit()
 
-# Close the database connection
 conn.close()
 
-print("Data inserted successfully into the SQLite database.")
