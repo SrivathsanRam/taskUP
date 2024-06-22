@@ -1,13 +1,12 @@
+/* eslint-disable react/prop-types */
 import { TagsInput } from "react-tag-input-component";
-import { useState } from "react";
+//import { useState } from "react";
 
-const Tag = () => {
-  const [selected, setSelected] = useState(["gardening"]);
+const Tag = ({selected, setSelected}) => {
+  //const [selected, setSelected] = useState(["gardening","cleaning","pick-up","share food"]);
 
   return (
     <div>
-      <h1>Add Tags</h1>
-      <pre>{JSON.stringify(selected)}</pre>
       <TagsInput
         value={selected}
         onChange={setSelected}

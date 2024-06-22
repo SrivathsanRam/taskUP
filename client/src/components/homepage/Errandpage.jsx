@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Errand from './Errand'; // Ensure the Errand component is in the same folder or adjust the path
+import "./Errandpage.css"
 
-const ErrandsPage = ({ userPostcode, userPrevMatched }) => {
+
+const ErrandsPage = ({ tags, userPostcode, userPrevMatched }) => {
   const [errands, setErrands] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -26,7 +28,7 @@ const ErrandsPage = ({ userPostcode, userPrevMatched }) => {
     };
 
     fetchErrands();
-  }, [userPostcode]);
+  }, [userPostcode, userPrevMatched]);
 
   if (loading) {
     return <div>Loading...</div>;
@@ -35,13 +37,14 @@ const ErrandsPage = ({ userPostcode, userPrevMatched }) => {
   if (error) {
     return <div>Error: {error.message}</div>;
   }
-
+  const filteredErrands = errands.filter(errand => tags.includes(errand.tag));
   return (
-    <div className="errand-list">
-      {errands.map((errand) => (
+    <div className="errand-list scrollable-container">
+      {filteredErrands.map((errand) => (
         <Errand
           key={errand.id}
           proximity={errand.proximity}
+          postcode={errand.postcode}
           duration={errand.duration}
           description={errand.description}
           tag={errand.tag}

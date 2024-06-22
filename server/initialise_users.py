@@ -33,7 +33,7 @@ cur.execute('''
 
 #pick-up, cleaning, gardening, lend tools, share food
 sample_data = [
-    ('T0454321B', 'Sri', 19, '520828', '91159829', '[ [5, 3, "pick-up"], [5, 2, "lend tools"], [5, 1, "gardening"], [5, 2, "share food"], [5, 0, "cleaning"], [5, 2, "pick-up"], [5, 1, "lend tools"], [5, 0, "gardening"], [5, 3, "share food"], [5, 2, "cleaning"] ]'),
+    ('T0454321B', 'Sri', 19, '520828', '91159829', '[ [5, 3, "cleaning"], [5, 2, "lend tools"], [5, 1, "gardening"], [5, 2, "share food"], [5, 0, "cleaning"], [5, 2, "pick-up"], [5, 1, "lend tools"], [5, 0, "gardening"], [5, 3, "share food"], [5, 2, "cleaning"] ]'),
     ('T0412345C', 'Balaji', 19, '520829', '82923307', '[ [30, 5, "gardening"], [20, 5, "gardening"], [20, 6, "gardening"], [20, 4, "gardening"], [20, 3, "gardening"], [20, 0, "gardening"], [20, 1, "gardening"] ]')
 ]
 

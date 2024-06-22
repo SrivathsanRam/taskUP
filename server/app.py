@@ -2,6 +2,8 @@ from flask import Flask, request, jsonify, g
 from flask_cors import CORS
 import sqlite3
 from proximity import calculate_proximity
+from regression import calculate_similarity_scores
+from regression import sort_errands
 
 app = Flask(__name__)
 CORS(app)
@@ -81,10 +83,13 @@ def get_errands():
                     'duration': duration
                 }
                 errands_list.append(errand_dict)
-        #key = pref_sort(user_prev_matched,errands_list)
-        print(user_prev_matched)
-        print(errands_list)
-        key, errands_list = zip(*sorted(zip(key, errands_list)))
+
+        key = sort_errands(user_prev_matched,errands_list)
+        id_mapping = {errand['id']: idx for idx, errand in enumerate(errands_list)}
+        sorted_errand_list = sorted(errands_list, key=lambda x: id_mapping[x['id']])
+        # Update the ids according to the desired order
+        for idx, errand in enumerate(sorted_errand_list):
+            errand['id'] = key[idx]
         return jsonify(errands_list)
 
     except sqlite3.Error as e:

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
 
 const Errand = ({ proximity, duration, description, tag }) => {
   return (
@@ -11,6 +12,7 @@ const Errand = ({ proximity, duration, description, tag }) => {
           <strong>Duration:</strong> {duration} mins<br />
           <strong>Tag:</strong> {tag}
         </Card.Text>
+        <Button variant="primary">Accept</Button>
       </Card.Body>
     </Card>
   );
