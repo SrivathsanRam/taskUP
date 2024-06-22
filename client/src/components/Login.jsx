@@ -1,17 +1,16 @@
 /* eslint-disable react/prop-types */
-// src/components/Login.js
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Login = ({ setUser }) => {
-  const [username, setUsername] = useState('');
+  const [nric, setNric] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');  // Clear any existing error message
+    setError('');
 
     try {
       const response = await fetch('/api/login', {
@@ -19,7 +18,7 @@ const Login = ({ setUser }) => {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ username, password })
+        body: JSON.stringify({ nric, password })
       });
 
       if (response.ok) {
@@ -36,14 +35,14 @@ const Login = ({ setUser }) => {
 
   return (
     <div>
-      <h2>Login</h2>
+      <h2>Login with Singpass</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Username:</label>
+          <label>NRIC:</label>
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            value={nric}
+            onChange={(e) => setNric(e.target.value)}
             required
           />
         </div>
