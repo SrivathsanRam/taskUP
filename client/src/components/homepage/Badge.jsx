@@ -3,8 +3,8 @@
 const BadgeImage = ({ badgeNumber }) => {
   return (
     <img
-      src={`/images/badges/badge_${badgeNumber}.png`}
-      alt={`Badge ${badgeNumber}`}
+      src={`badge_${badgeNumber}.png`}
+      alt={`Badge_${badgeNumber}`}
       className="badge-image"
     />
   );

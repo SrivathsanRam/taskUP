@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import BadgeImage from './Badge';
+import './Sidebar.css';
 
 const Sidebar = ({ userName, score }) => {
   const renderBadges = () => {
@@ -12,11 +13,14 @@ const Sidebar = ({ userName, score }) => {
 
   return (
     <div className="sidebar">
-      <div className="user-info">
-        <h3>{userName}</h3>
+      <div className="mt-5">
+        <h3>Welcome {userName}!</h3>
       </div>
-      <div className="badges">
+      <div className="mt-5">
         {score > 0 && renderBadges()}
+      </div>
+      <div className="mt-5">
+        You are in the top {score*3+1}% of users this month!
       </div>
     </div>
   );

@@ -1,0 +1,16 @@
+.sidebar {
+    background-color: #f8f9fa; /* Example background color */
+    border-right: 1px solid #e9ecef; /* Example border */
+    padding: 20px; /* Adjust padding as needed */
+    height: 100vh; /* Set sidebar to full height */
+    /* Add more styles like box-shadow, border-radius, etc. */
+}
+
+.sidebar ul {
+    padding-left: 0;
+}
+
+.sidebar li {
+    list-style: none;
+    margin-bottom: 10px; /* Adjust spacing between items */
+}
