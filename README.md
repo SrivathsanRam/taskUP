@@ -15,6 +15,11 @@ python -m venv venv
 venv\Scripts\activate.bat
 pip install -r requirements.txt
 ```
+Create secrets.py and add a variable "API_KEY = '\<Your OneMap API Key\>'"
+```
+cd server
+type nul > secrets.py
+```
 Run initialise_users.py and initialise_errands.py
 ```
 cd server
