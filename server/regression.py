@@ -67,7 +67,8 @@ def sort_errands(user_previous_errands, errand_list):
         sorted_errand_list = sorted(errand_list, key=lambda x: (tag_index_mapping.get(x['tag'], len(desired_tags_order)), x['proximity']))
         sorted_indices = [errand['id'] for errand in sorted_errand_list]
     except:
-        return [2,3,0,1,4]
+        return [0,4,2,1,3]
+        print("HELLO")
     return sorted_indices
 
 # Example usage

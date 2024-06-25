@@ -5,6 +5,7 @@ const YourTasks = ({
   phoneNumber,
   proximity,
   fullName,
+  desc
 }) => {
   // State for tip amount
   const [tipAmount, setTipAmount] = useState(0);
@@ -32,7 +33,10 @@ const YourTasks = ({
   return (
     <div className="your-tasks card">
       <div className="card-body">
-        <div className="initials text-center mb-3"><strong>{getInitials(fullName)} is on the way!</strong></div>
+        <div className="initials text-center mb-3"><strong>{getInitials(fullName)} is on the way! </strong></div>
+        <div className="proximity mb-3">
+           Task: {desc}
+        </div>
         <div className="proximity mb-3">
           <strong>Proximity:</strong> {proximity} mins
         </div>

@@ -27,7 +27,8 @@ const Home = ({ user }) => {
             </div>
             <div className="col-4">
               <h1 className="text-center">Your Tasks</h1>
-              <YourTasks phoneNumber={82923370} fullName={"Shankar Balaji"} proximity={5}/>
+              <YourTasks phoneNumber={82923370} desc={"Water plants at #05-123"} fullName={"Shankar Balaji"} proximity={5}/>
+              <YourTasks phoneNumber={82923370} desc={"Lend a power-drill"} fullName={"David Lee"} proximity={10}/>
             </div>
           </div>
         </div>

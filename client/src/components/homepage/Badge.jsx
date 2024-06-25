@@ -7,12 +7,14 @@ import badge_3 from '../../public/badge_3.png'
 
 const BadgeImage = ({ badgeNumber }) => {
   const lst = [badge_1,badge_2,badge_3];
+  const descs = ['First Task', '5 Tasks', '10 Tasks']
   return (
     <img
       src={lst[badgeNumber-1]}
       alt={`Badge_${badgeNumber}`}
       className="badge-image"
       width={75}
+      title={descs[badgeNumber-1]}
     />
   );
 };
