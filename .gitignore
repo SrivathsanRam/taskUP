@@ -1,4 +1,5 @@
 venv
+secrets.py
 # Logs
 logs
 *.log
